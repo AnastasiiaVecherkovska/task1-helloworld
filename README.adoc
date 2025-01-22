@@ -1,0 +1,75 @@
+:hardbreaks:
+:icons: font
+:author: Marcin Ogorzałek
+:copyright: Copyrighted by EPAM Systems
+= HelloWorld
+
+== Przygotowanie
+
+Przed zajęciami proszę o zapoznanie się z załączonymi materiałami oraz o zainstalowanie niezbędnego oprogramowania, które będzie wykorzystywane na tych i kolejnych zajęciach.
+
+=== Proszę o zapoznanie się z następującymi materiałami
+
+* https://docs.oracle.com/javase/tutorial/getStarted/cupojava/index.html[Oracle Trail -  The "Hello World!" Application]
+* https://docs.oracle.com/javase/tutorial/getStarted/application/index.html[Oracle Trail - A Closer Look at the "Hello World" Application]
+* https://docs.oracle.com/javase/tutorial/java/concepts/package.html[Oracle Trail - What is a package]
+* https://docs.oracle.com/javase/tutorial/java/package/index.html[Oracle Trail - Packages]
+* https://training.github.com/downloads/pl/github-git-cheat-sheet/[Ściągawka jak korzystać z Gita]
+
+===  Przed zajęciami proszę o zainstalowanie
+
+* https://openjdk.java.net/install/[Java Development Kit (JDK) w wersji 11, dystrybucja OpenJDK]
+** https://techoral.com/blog/java/openjdk-install-windows.html[szczegłówa instrukcja instalacji OpenJDK na systemach MS Windows, na przykładzie OpenJDK 8]
+* https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Gita, najnowsza dostępna wersja]
+** oraz jego wstępną konfigurację Gita zgodnie z https://git-scm.com/book/pl/v2/Pierwsze-kroki-Wst%C4%99pna-konfiguracja-Git[instrukcją].
+* https://www.jetbrains.com/idea/download/[IntelliJ IDEA Community lub IntelliJ IDEA Ultimate (w przypadku posiadania licencji)]
+
+== Zadanie
+
+Proszę wykonać następujące zadania w zadanej kolejności:
+
+TIP: Komendy, które należy wywołać w celu kompilacji kodu i/lub uruchomienia danej aplikacji wymagają pewnych parametrów do poprawnego działania.
+
+. Przygotowanie kodu źródłowego aplikacji `HelloAnonymousWorld`, a następnie jego kompilacja do kodu bajtowego i uruchomienie programu.
+.. Kod źródłowy powinien znajdować się w pliku `HelloAnonymousWorld.java`.
+.. Kod źródłowy powinien znajdować się w głównym katalogu zadania.
+.. Kod źródłowy powinien być zadeklarowany w anonimowym pakiecie.
+.. W pliku `HelloAnonymousWorld.java` powinna być zadeklarowana klasa `HelloAnonymousWorld` wraz z główną metodą aplikacji, czyli `public static void main(String[] args)`.
+.. Kod bajtowy powinien być kompilowany w katalogu `out` znajdującym się w głównym katalogu zadania.
+.. Jeżeli katalog `out` nie istnieje, powinien być tworzony automatycznie w czasie kompilacji kodu źródłowego.
+.. Dokonaj kompilacji pliku źródłowego `HelloAnonymousWorld.java` za pomocą komendy `javac`.
+.. Wykonaj kod bajtowy tej aplikacji, czyli `HelloAnonymousWorld.class` za pomocą komendy `java`.
+.. Aplikacja w czasie wykonania powinna wypisać komunikat *"Hello Anonymous World!"*.
+
+. Przygotowanie kodu źródłowego aplikacji `HelloOneFileWorld`, a następnie jego kompilacja do kodu bajtowego i uruchomienie programu.
+.. Kod źródłowy powinien znajdować się w pliku `HelloOneFileWorld.java`.
+.. Kod źródłowy powinien znajdować się w katalogu `efs/onefile` który jest umieszczony w głównym katalogu zadania.
+.. Kod aplikacji powinien być zadeklarowany w pakiecie `efs.onefile`.
+.. W pliku `HelloOneFileWorld.java` powinna być zadeklarowana klasa `HelloOneFileWorld` wraz z główną metodą aplikacji, czyli `public static void main(String[] args)`.
+.. Skompiluj i wykonaj kod aplikacji, czyli `HelloOneFileWorld.java` pojedynczą komendą `java` dzięki funkcjonalności https://openjdk.java.net/jeps/330[JEP 330] wprowadzonej w JDK 11.
+.. Aplikacja w czasie wykonania powinna wypisać komunikat *"Hello from one file in a package."*.
+
+. Przygotowanie kodu źródłowego aplikacji `HelloWorld` złożonej z dwóch plików. Następnie kompilacja jej kodu źródłowego do kodu bajtowego i uruchomienie programu.
+.. Kod źródłowy powinien składać się z dwóch plików: `HelloWorld.java` oraz `UsedByHelloWorld.java`.
+.. Kod źródłowy powinien znajdować się w katalogu `efs/manyfiles`, który jest umieszczony w głównym katalogu zadania.
+.. Kod aplikacji powinien być zadeklarowany w pakiecie `efs.manyfiles`.
+.. W pliku `HelloWorld.java` powinna być zadeklarowana klasa `HelloWorld` wraz z główną metodą aplikacji, czyli `public static void main(String[] args)`.
+.. Główna metoda aplikacji powinna wykorzystywać statyczną metodę `print()` z klasy `UsedByHelloWorld`.
+.. W pliku `UsedByHelloWorld.java` powinna być zadeklarowana klasa `UsedByHelloWorld` wraz z metodą `public static void print()`.
+.. Metoda `print()` powinna byc odpowiedzialna za wydruk napisu *"Hello World on many files."*.
+.. Kod bajtowy powinien być kompilowany w katalogu `out/efs/manyfiles` znajdującym się w głównym katalogu zadania.
+.. Jeżeli katalog `out/efs/manyfiles` nie istnieje, powinien być tworzony automatycznie w czasie kompilacji kodu źródłowego.
+.. Dokonaj kompilacji plików źródłowych `HelloWorld.java` i `UsedByHelloWorld.java` za pomocą pojedynczej komendy `javac`.
++
+IMPORTANT: Zazwyczaj wystarczy skompilować główną klasę aplikacji, by wszystkie wykorzystywane przez nią klasy również zostały skompilowane. W tym konkretnym przypadku chcemy jednak wskazania wprost tego, że wszystkie klasy w pakiecie mają zostać skompilowane. Przydany tu może być _wieloznacznik_ (ang. _wildcard_).
++
+.. Wykonaj kod bajtowy tej aplikacji, czyli `HelloWorld.class` i `UsedByHelloWorld.class` za pomocą komendy `java`.
+.. Aplikacja w czasie wykonania powinna wypisać komunikat *"Hello World on many files."*
+
+. Zebranie niezbędnych komend do kompilacji kodu i uruchomienia aplikacji w pliku `run.txt`.
+.. Każda komenda powinna znajdować się w nowej linii.
+.. Kolejność komend powinna być zgodna z kolejnością wykonywanych powyżej aplikacji.
+
+. Przesłanie kodu źródłowego aplikacji oraz pliku `run.txt` na zdalne repozytorium tego zadania dedykowane osobie je wykonującej.
+
+IMPORTANT: Skorzystaj z komend `git add`, `git commit` i `git push`, aby przesłać swoją pracę.

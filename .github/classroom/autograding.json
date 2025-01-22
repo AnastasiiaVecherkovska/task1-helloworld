@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Execution of HelloAnonymousWorld",
+      "setup": "",
+      "run": "javac HelloAnonymousWorld.java; java HelloAnonymousWorld",
+      "input": "",
+      "output": "Hello Anonymous World!",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Execution of HelloAnonymousWorld",
+      "setup": "",
+      "run": "java efs/onefile/HelloOneFileWorld.java",
+      "input": "",
+      "output": "Hello from one file in a package.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Execution of HelloWorld",
+      "setup": "",
+      "run": "javac efs/manyfiles/HelloWorld.java; java efs.manyfiles.HelloWorld",
+      "input": "",
+      "output": "Hello World on many files.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Execution of commands from run.txt",
+      "setup": "",
+      "run": "chmod 0700 .scripts/execution-test.sh; bash .scripts/execution-test.sh",
+      "input": "",
+      "output": "Hello Anonymous World!\r\nHello from one file in a package.\r\nHello World on many files.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Checking for presence of .class files in out directory",
+      "setup": "",
+      "run": "chmod 0700 .scripts/presence-test.sh; bash .scripts/presence-test.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Autograding
+
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Autograding
+        uses: DrErickson/autograding@v2.1.1
